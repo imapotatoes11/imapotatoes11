@@ -1,4 +1,6 @@
 import time
-def timed():
+def timed(msg="You were away for [.] seconds..."):
     start=time.time()
-    while True: print(f"You were away for {round(time.time()-start,2):,} seconds...",end="\r")
+    while True: 
+        m=msg.replace("[.]",f"{round(time.time()-start,2):,}")
+        print(m,end="\r")
